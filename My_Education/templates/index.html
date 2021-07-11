@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Homepage{% endblock %}
+
+{% block content %}
+<center>
+    <p class ="description">Search for what you value, ex: 'design', 'leadership', 'I want to be able to help people out there', type in as much information about what you want to see </p>
+
+  <form method="post" action="predict" id = "input" placeholder="Search for what interests you">
+    <input type="text" name = "a">
+      <input type = "submit">
+    <br>
+    <label for="topic"><h5>Topic:</h5></label>
+    <select id="topic" name="b">
+      {%for i in range(0,len)%}
+          <option value={{ topics[i] }}>{{viewtopics[i]}}</option>
+      {%endfor%}
+    </select>
+  </form>
+</center>
+{% endblock %}
